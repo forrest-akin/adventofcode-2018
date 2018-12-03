@@ -1,5 +1,3 @@
-const input = require('./d1-input.js')
-
 function aoc1a (input) {
   return input.reduce((sum, num) => sum + parseInt(num), 0)
 }
@@ -19,6 +17,8 @@ function aoc1b (input) {
   
   return sum
 }
+
+const input = require('./parseInput')('d1')
 
 console.log({
   aoc1a: aoc1a(input),
