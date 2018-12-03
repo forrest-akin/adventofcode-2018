@@ -1,4 +1,4 @@
-module.exports = `uosnxmfkezbojfdgwvrtaqhluy
+uosnxmfkezbojfdgwvrtaqhluy
 iosnxmfkazbcopdgnvrtaqhluy
 ioanxmfkezbcjpdgwvrjaohluy
 uosnxmfkezbcjpjgwvrtaqhlut
@@ -247,4 +247,4 @@ iosnxmfkvzbcbpdgwvrhaqhluy
 insnxmfkezbczpdgwvrtajhluy
 iosnxrfkelbcjpdgwvrtaqhluf
 iosnxmfkezbcjpdgwsrtaqhzud
-iosnxmfyvzbcjpdgwyrtaqhluy`.split('\n')
+iosnxmfyvzbcjpdgwyrtaqhluy
