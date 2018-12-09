@@ -1,3 +1,7 @@
+function compose (entry, ...fns) {
+  return (...args) => fns.reduceRight((x, f) => f(x), entry(...args))
+}
+
 function countBy (collection, keyBy = identity) {
   const result = {}
   
@@ -64,6 +68,7 @@ function not (predicate) {
 }
 
 module.exports = {
+  compose,
   countBy,
   get,
   identity,
