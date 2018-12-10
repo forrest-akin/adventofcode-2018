@@ -4,18 +4,17 @@ const {
 
 
 function aoc2a (input) {
-  const {
-    twos, threes
-  } = input.reduce(reduceLetterCounts, { twos: 0, threes: 0 })
-
-  return twos * threes
+  return input.reduce(reduceLetterCounts, [0, 0])
+    .reduce((twos, threes) => twos * threes)
 }
 
 function aoc2b (input) {
   while (a = input.shift()) {
-    for (const b of input) {
-      const result = stringAND(a, b)
-      if (result.length === a.length - 1) return result
+    for (b of input) {
+      commonChars = stringAND(a, b)
+
+      if (commonChars.length === a.length - 1)
+        return commonChars
     }
   }
 }
@@ -43,8 +42,8 @@ const shouldIncThrees = (hasThrees, count) => !hasThrees && isThree(count)
 const isTwo = num => isEqual(num, 2)
 const isThree = num => isEqual(num, 3)
 
-const incTwos = result => incrementKey(result, 'twos')
-const incThrees = result => incrementKey(result, 'threes')
+const incTwos = result => incrementKey(result, 0)
+const incThrees = result => incrementKey(result, 1)
 
 const stringAND = (a, b) =>
   a.split('')
