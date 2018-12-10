@@ -2,12 +2,22 @@ const {
   countBy, incrementKey, isEqual, isTrue
 } = require('./utils')
 
+
 function aoc2a (input) {
   const {
     twos, threes
   } = input.reduce(reduceLetterCounts, { twos: 0, threes: 0 })
 
   return twos * threes
+}
+
+function aoc2b (input) {
+  while (a = input.shift()) {
+    for (const b of input) {
+      const result = stringAND(a, b)
+      if (result.length === a.length - 1) return result
+    }
+  }
 }
 
 const reduceLetterCounts = (result, str) => {
@@ -36,6 +46,15 @@ const isThree = num => isEqual(num, 3)
 const incTwos = result => incrementKey(result, 'twos')
 const incThrees = result => incrementKey(result, 'threes')
 
+const stringAND = (a, b) =>
+  a.split('')
+    .filter((char, idx) => char === b[idx])
+    .join('')
+
+
 const input = require('./parseInput')('d2')
 
-console.log({ aoc2a: aoc2a(input) })
+console.log({
+  aoc2a: aoc2a(input),
+  aoc2b: aoc2b(input),
+})
